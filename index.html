@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap');
+        *{
+            margin: 0%;
+            padding: 0%;
+            font-family: 'Nunito Sans', sans-serif;
+
+        }
+        :root{
+            --cor_fundo: #151826;
+            --cor_destaque: #dd2c2c;
+        }
+        body{
+            display: flex;
+            background-color: var(--cor_fundo);
+        }
+        #menu_lateral{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--cor_fundo);
+            height: 100vh;
+            width: 100px;
+            box-shadow: inset 1px 0px 26px 0px #00000070;
+            position: fixed;
+        }
+        #social{
+            display: flex;
+            height: fit-content;
+        }
+        #social #container{
+            display: flex;
+            flex-direction: column;
+        }
+        #social img{
+            width: 80px;
+            height: 80px;
+
+        }   
+
+        #social img:hover{
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.096);
+        }   
+
+        #informações{
+            margin: 80px 10px 10px 200px;
+        }
+        #informações p{
+            color: aliceblue;
+            font-size: 20pt;
+        }
+        #informações #nome{
+            font-size: 60pt;
+            font-weight: 700;
+            color: aliceblue;
+            margin-bottom: 10px;
+        }
+        #informações #iAm{
+            font-size: 20pt;
+            font-weight: 600;
+            color: var(--cor_destaque);
+            margin-bottom: 10px;
+        }
+        #informações button{
+            border: 1px solid aliceblue;
+            background-color: #00000000;
+            color: aliceblue;
+            padding: 15px 40px;
+            margin: 30px 10px 0px 0px;
+            font-variant: small-caps;
+            font-size: 14pt;
+            font-weight: 600;
+        }
+        #informações button:hover{
+            border: 1px solid aliceblue;
+            background-color: aliceblue;
+            color: var(--cor_fundo);
+            padding: 15px 40px;
+            margin: 30px 10px 0px 0px;
+            font-variant: small-caps;
+            font-size: 14pt;
+            font-weight: 600;
+        }
+        .destaque{
+            color: var(--cor_destaque);
+        }
+
+        #projetos{
+            margin: 200px;
+            color: aliceblue;
+            width: 100%;
+        }
+        .seção_project{
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu_lateral">
+        <div id="social">
+            <section id="container">
+                <img src="Imagens/social-media/discordWh.png" alt="">
+                <img src="Imagens/social-media/wppWh.png" alt="">
+                <img src="Imagens/social-media/instaWh.png" alt="">
+                <img src="Imagens/social-media/fbWh.png" alt="">
+            </section>
+        </div>
+    </div>
+    <main>
+        <div id="informações">
+            <p id="nome"> Olá! <br> Eu sou o <span class="destaque">Pedro Elias</span></p>
+            <p><span id="iAm">Desenvolvedor Fullstack</span> <br>
+            Atuo no desenvolvimento web e mobile a 2 anos</p>
+            
+            <button>contato</button>
+            <button>mais</button>
+
+        </div>
+
+        <div id="projetos">
+            <h1>Projetos</h1>
+            <div id="pai1" class="seção_project " onclick="visualização()">
+                <span style="display: flex;">
+                    <p >JavaScript + html + cs</p>
+                    <p id="abrir_chave1">s { }</p>
+                </span>
+                <div id="filho1" class="seção_project">
+                    Projeto X
+                </div>
+                <p id="fecha_chave1"></p>
+
+            </div>
+        </div>
+    </main>
+    <script>
+        const pai1 = document.getElementById('pai1')
+        const filho1 = document.getElementById('filho1')
+
+        const abrir_chave1 = document.getElementById('abrir_chave1')
+        const fecha_chave1 = document.getElementById('fecha_chave1')
+        
+        abrir_chave1.innerHTML = 's { }'
+        fecha_chave1.innerHTML = fecha_chave1.innerHTML+ ''
+
+        filho1.style.display = 'none'
+
+        function visualização() {
+            if (filho1.style.display == 'none') {
+                filho1.style.display = 'block'
+                abrir_chave1.innerHTML = 's {'
+                fecha_chave1.innerHTML = '}'
+
+            }else{
+                filho1.style.display = 'none'
+                abrir_chave1.innerHTML = 's { }'
+                fecha_chave1.innerHTML = ''
+
+            }
+        }
+
+        
+    </script>
+</body>
+</html>
