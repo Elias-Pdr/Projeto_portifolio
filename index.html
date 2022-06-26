@@ -58,6 +58,12 @@
             color: aliceblue;
             font-size: 20pt;
         }
+        #informações #ola{
+            font-size: 60pt;
+            font-weight: 700;
+            color: aliceblue;
+            margin-bottom: 10px;
+        }
         #informações #nome{
             font-size: 60pt;
             font-weight: 700;
@@ -120,7 +126,9 @@
     </div>
     <main>
         <div id="informações">
-            <p id="nome"> Olá! <br> Eu sou o <span class="destaque">Pedro Elias</span></p>
+            <p id="ola">Olá</p>
+            <p id="nome">Eu sou o <span class="destaque">Pedro Elias</span></p>
+
             <p><span id="iAm">Desenvolvedor Fullstack</span> <br>
             Atuo no desenvolvimento web e mobile a 2 anos</p>
             
@@ -131,26 +139,34 @@
 
         <div id="projetos">
             <h1>Projetos</h1>
-            <div id="pai1" class="seção_project " onclick="visualização()">
-                <span style="display: flex;">
-                    <p >JavaScript + html + cs</p>
+            <div id="pai1" class="seção_project ">
+                <span style="display: flex;" onclick="visualização()" >
+                    <p>JavaScript + html + cs</p>
                     <p id="abrir_chave1">s { }</p>
                 </span>
-                <div id="filho1" class="seção_project">
-                    Projeto X
+                <div onclick="window.location.href = '1_login/login.html'" id="filho1" class="seção_project">
+                    <p>Tela de login</p>
                 </div>
                 <p id="fecha_chave1"></p>
-
             </div>
         </div>
     </main>
     <script>
+        const hello = document.getElementById('ola')
+
         const pai1 = document.getElementById('pai1')
         const filho1 = document.getElementById('filho1')
 
         const abrir_chave1 = document.getElementById('abrir_chave1')
         const fecha_chave1 = document.getElementById('fecha_chave1')
         
+        if(localStorage.getItem('usuario') != null){
+            hello.innerHTML = 'Olá ' + localStorage.getItem('usuario')+'!'
+        }else{
+            hello.innerHTML = 'Olá'
+        }
+
+
         abrir_chave1.innerHTML = 's { }'
         fecha_chave1.innerHTML = fecha_chave1.innerHTML+ ''
 

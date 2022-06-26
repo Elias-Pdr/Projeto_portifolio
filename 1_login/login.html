@@ -51,7 +51,8 @@
                 if(senha.value == confirm_senha.value){
                     localStorage.setItem('usuario', usuario_txt.value)
                     console.log(localStorage.getItem('usuario'));
-                    
+                    window.location.href = '../index.html'
+
                     senha_error.style.display = 'none'
                     if(senha.value == '123' & confirm_senha.value == '123'){
                         senha_error.style.display = 'flex'
