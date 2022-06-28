@@ -49,7 +49,7 @@
         #containerMain{
             display: flex;
             justify-content: center;
-            margin: 4vw 0px 20px 70px;
+            margin: 9vw 0px 20px 70px;
             width: 100vw;
         }  
         main{
@@ -79,25 +79,25 @@
             border: 1px solid aliceblue;
             background-color: #00000000;
             color: aliceblue;
-            padding: 15px;
+            padding: 13px;
             margin: 50px 10px 0px 0px;
             font-variant: small-caps;
             font-size: 1em;
-            font-weight: 600;
-            width: 130px;
-
+            font-weight: 700;
+            width: 120px;
         }
         #informações button:hover{
             border: 1px solid aliceblue;
             background-color: aliceblue;
             color: var(--cor_fundo);
+            letter-spacing: 2px;
         }
         .destaque{
             color: var(--cor_destaque);
         }
 
         #projetos{
-            margin-top: 200px;
+            margin-top: 13vw;
             color: aliceblue;
             width: 100%;
         }
@@ -121,7 +121,8 @@
         }
         #opiçõesContato{
             display: none;
-            
+            align-items: center;
+
         }
 
         #opiçõesContato #last_item{
@@ -131,7 +132,8 @@
          
         #opiçõesContato > img{
             width: 45px;
-            height: 45px;
+            height: 45px;    
+            animation: slide 0.3s ease-out;
         }
         #opiçõesContato > img:hover{
             width: 45px;
@@ -140,12 +142,32 @@
 
         }
 
+        .animationMenu {
+            animation: flag-unfurl 1s ease-out;
+            
+        }
+        @keyframes flag-unfurl {
+            0%   { width: 0; }
+            20% { width: 180px; }
+            25% { width: fit-content; }
+            100% { width: fit-content; }
+        }
 
-
+        @keyframes slide {
+            0%  {
+                transform: scale(0, 0);
+            }
+            
+            100% {
+                transform: scale(1, 1);
+            }
+            
+        }
 
         @media only screen and (max-width: 700px){
 
             #contatos{
+
                 position: fixed;
                 left: 20px;
                 bottom: 30px;
@@ -156,12 +178,13 @@
                 background-color: rgb(12 15 28);
                 border-radius: 40px;
                 box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 16%);
+
             }
             #menu_lateral{
                 display: none;
             }
             #containerMain{
-                margin: 20px 0px 150px 0px;
+                margin: 40px 0px 150px 0px;
             }  
             #projetos {
                 margin-top: 100px;
@@ -176,6 +199,10 @@
 
             #informações #ola, #informações #nome{
                 font-size: 2.5em;
+            }
+            #informações button{
+                padding: 10px;
+                width: 100px;
             }
         }
 
@@ -198,6 +225,8 @@
     </div>
 
     <div id="containerMain">
+        <div></div>
+
         <main>
             <div id="informações">
                 <p id="ola">Olá</p>
@@ -223,8 +252,9 @@
             </div>
             <div id="contatos">
                 <img onclick="menuContato()" id="btnContato" src="Imagens/social-media/wppWh.png" alt="">
-                <div id="opiçõesContato">
+                <div class="animationMenu" id="opiçõesContato">
                     <img src="Imagens/social-media/discordWh.png" alt="">
+                    <img src="Imagens/social-media/instaWh.png" alt="">
                     <img src="Imagens/social-media/fbWh.png" alt="">
                     <img src="Imagens/social-media/instaWh.png" alt="">
                     <img id="last_item" src="Imagens/social-media/wppWh.png" alt="">
