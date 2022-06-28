@@ -42,6 +42,8 @@
         #social img{
             width: 50px;
             height: 50px;
+            cursor: pointer;
+
         }   
         #social img:hover{
             background-color: rgba(255, 255, 255, 0.096);
@@ -85,6 +87,8 @@
             font-size: 1em;
             font-weight: 700;
             width: 120px;
+            cursor: pointer;
+
         }
         #informações button:hover{
             border: 1px solid aliceblue;
@@ -106,23 +110,20 @@
             padding: 10px;
             border-radius: 10px;
             margin: 10px 0px;
+            cursor: pointer;
+
         }
 
 
         #contatos{
             display: none;
-
+            cursor: pointer;
         }
         #btnContato{
             width: 50px;
             height: 50px;
             background-color: rgb(11, 66, 48);
             border-radius: 40px;
-        }
-        #opiçõesContato{
-            display: none;
-            align-items: center;
-
         }
 
         #opiçõesContato #last_item{
@@ -167,7 +168,6 @@
         @media only screen and (max-width: 700px){
 
             #contatos{
-
                 position: fixed;
                 left: 20px;
                 bottom: 30px;
@@ -251,7 +251,7 @@
                 </div>
             </div>
             <div id="contatos">
-                <img onclick="menuContato()" id="btnContato" src="Imagens/social-media/wppWh.png" alt="">
+                <img onclick="menuContato()" onmouseenter="menuContato()" id="btnContato" src="Imagens/social-media/wppWh.png" alt="">
                 <div class="animationMenu" id="opiçõesContato">
                     <img src="Imagens/social-media/discordWh.png" alt="">
                     <img src="Imagens/social-media/instaWh.png" alt="">
@@ -274,7 +274,7 @@
         const fecha_chave1 = document.getElementById('fecha_chave1')
 
         const opiçõesContato = document.getElementById('opiçõesContato')
-
+        opiçõesContato.style.display = 'none'
 
         if(localStorage.getItem('usuario') != null){
             hello.innerHTML = 'Olá ' + localStorage.getItem('usuario')+'!'
@@ -291,10 +291,10 @@
         function menuContato() {
             if (opiçõesContato.style.display == 'none') {
                 opiçõesContato.style.display = 'flex'
+                opiçõesContato.style.alignItems = 'center';
 
             }else{
                 opiçõesContato.style.display = 'none'
-
             }
         }
 
