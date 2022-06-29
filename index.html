@@ -22,9 +22,6 @@
             background-color: var(--cor_fundo);
         }
         #menu_lateral{
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-color: var(--cor_fundo);
             height: 100vh;
             width: 60px;
@@ -32,17 +29,24 @@
             position: fixed;
         }
         #social{
+            height: 100%;
             display: flex;
-            height: fit-content;
+            justify-content: center;
+            align-items: center;
+
         }
         #social #container{
             display: flex;
+            justify-content: space-evenly;
             flex-direction: column;
+            align-items: center;
+            height: 80%;
         }
         #social img{
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
+            margin: 5px 0px;
 
         }   
         #social img:hover{
@@ -62,12 +66,12 @@
             font-size: 1.5em;
         }
         #informações #ola{
-            font-size: 3em;
+            font-size: 4em;
             font-weight: 700;
             color: aliceblue;
         }
         #informações #nome{
-            font-size: 3em;
+            font-size: 4em;
             font-weight: 700;
             color: aliceblue;
             margin-bottom: 20px;
@@ -118,33 +122,41 @@
         #contatos{
             display: none;
             cursor: pointer;
+            position: fixed;
+            left: 20px;
+            bottom: 30px;
+            width: fit-content;
+            height: 45px;
+            background-color: rgb(12 15 28);
+            border-radius: 40px;
+            box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 16%);
         }
         #btnContato{
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
+            padding: 3px;
             background-color: rgb(11, 66, 48);
             border-radius: 40px;
         }
 
         #opiçõesContato #last_item{
             border-radius: 0px 50px 50px 0px;
-            margin-left: 5px;
         }
          
         #opiçõesContato > img{
             width: 45px;
             height: 45px;    
-            animation: slide 0.3s ease-out;
+            margin-left: 5px;
         }
         #opiçõesContato > img:hover{
-            width: 45px;
-            height: 45px;
             background-color: rgba(240, 248, 255, 0.13);
 
         }
-
+        .slide{
+           animation: slide 0.25s ease-out;
+        }
         .animationMenu {
-            animation: flag-unfurl 1s ease-out;
+            animation: flag-unfurl 0.5s ease-out;
             
         }
         @keyframes flag-unfurl {
@@ -165,20 +177,11 @@
             
         }
 
-        @media only screen and (max-width: 700px){
+        @media only screen and (max-width: 750px){
 
             #contatos{
-                position: fixed;
-                left: 20px;
-                bottom: 30px;
                 display: flex;
                 align-items: center;
-                width: fit-content;
-                height: 45px;
-                background-color: rgb(12 15 28);
-                border-radius: 40px;
-                box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 16%);
-
             }
             #menu_lateral{
                 display: none;
@@ -190,6 +193,12 @@
                 margin-top: 100px;
                 color: aliceblue;
                 width: 100%;
+            }
+            #informações #ola{
+                font-size: 3em;
+            }
+            #informações #nome{
+                font-size: 3em;
             }
         }
         @media only screen and (max-width: 550px){
@@ -212,15 +221,15 @@
     <div id="menu_lateral">
         <div id="social">
             <section id="container">
-                <img src="Imagens/social-media/discordWh.png" alt="">
-                <img src="Imagens/social-media/wppWh.png" alt="">
-                <img src="Imagens/social-media/instaWh.png" alt="">
-                <img src="Imagens/social-media/fbWh.png" alt="">
-                <img src="Imagens/social-media/fbWh.png" alt="">
-                <img src="Imagens/social-media/fbWh.png" alt="">
-                <img src="Imagens/social-media/fbWh.png" alt="">
-                <img src="Imagens/social-media/fbWh.png" alt="">
-            </section>
+                <img src="Imagens/social-media/icon_0004_zap.png" alt="">
+                <img src="Imagens/social-media/icon_0001_face.png" alt="">
+                <img src="Imagens/social-media/icon_0003_insta.png" alt="">
+                <img src="Imagens/social-media/icon_0005_tt.png" alt="">
+                <img src="Imagens/social-media/icon_0006_telegram.png" alt="">
+                <img src="Imagens/social-media/icon_0002_email.png" alt="">
+                <img src="Imagens/social-media/icon_0007_in.png" alt="">
+                <img src="Imagens/social-media/icon_0008_git.png" alt="">
+        </section>
         </div>
     </div>
 
@@ -239,25 +248,29 @@
             </div>
             <div id="projetos">
                 <h1>Projetos</h1>
-                <div id="pai1" class="seção_project ">
+                <div id="pai1" class="seção_project">
                     <span style="display: flex;" onclick="visualização()" >
                         <p>JavaScript + html + cs</p>
                         <p id="abrir_chave1">s { }</p>
                     </span>
-                    <div onclick="window.location.href = '1_login/login.html'" id="filho1" class="seção_project">
+                    <div onclick="window.location.href = '1_login/login.html'" id="filho1" class="seção_project slide">
                         <p>Tela de login</p>
                     </div>
                     <p id="fecha_chave1"></p>
                 </div>
             </div>
-            <div id="contatos">
-                <img onclick="menuContato()" onmouseenter="menuContato()" id="btnContato" src="Imagens/social-media/wppWh.png" alt="">
+            
+            <div id="contatos" >
+                <img onmouseenter="menuContato()" id="btnContato" src="Imagens/social-media/icon_0004_zap.png" alt="">
                 <div class="animationMenu" id="opiçõesContato">
-                    <img src="Imagens/social-media/discordWh.png" alt="">
-                    <img src="Imagens/social-media/instaWh.png" alt="">
-                    <img src="Imagens/social-media/fbWh.png" alt="">
-                    <img src="Imagens/social-media/instaWh.png" alt="">
-                    <img id="last_item" src="Imagens/social-media/wppWh.png" alt="">
+                    <img class="slide" src="Imagens/social-media/icon_0001_face.png" alt="">
+                    <img class="slide" src="Imagens/social-media/icon_0003_insta.png" alt="">
+                    <img class="slide" src="Imagens/social-media/icon_0005_tt.png" alt="">
+                    <img class="slide" src="Imagens/social-media/icon_0006_telegram.png" alt="">
+                    <img class="slide" src="Imagens/social-media/icon_0002_email.png" alt="">
+                    <img class="slide" src="Imagens/social-media/icon_0007_in.png" alt="">
+                    <img class="slide" src="Imagens/social-media/icon_0008_git.png" alt="">
+                    <img class="slide" id="last_item" src="Imagens/social-media/icon_0004_zap.png" alt="">
                 </div>
             </div>
 
@@ -272,6 +285,8 @@
 
         const abrir_chave1 = document.getElementById('abrir_chave1')
         const fecha_chave1 = document.getElementById('fecha_chave1')
+
+        const btnContato = document.getElementById('btnContato')
 
         const opiçõesContato = document.getElementById('opiçõesContato')
         opiçõesContato.style.display = 'none'
@@ -292,9 +307,12 @@
             if (opiçõesContato.style.display == 'none') {
                 opiçõesContato.style.display = 'flex'
                 opiçõesContato.style.alignItems = 'center';
+                btnContato.setAttribute('src', 'Imagens/social-media/icon_0000_seta.png')
 
             }else{
                 opiçõesContato.style.display = 'none'
+                btnContato.setAttribute('src', 'Imagens/social-media/icon_0004_zap.png')
+
             }
         }
 
